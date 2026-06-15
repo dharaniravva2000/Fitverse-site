@@ -1,18 +1,16 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Play, ChevronDown } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 
 const WORDS = ['Stronger', 'Faster', 'Leaner', 'Unstoppable', 'Elite'];
 
 export default function HeroSection() {
   const [wordIndex, setWordIndex] = useState(0);
   const [visible, setVisible] = useState(true);
-  const particleRef = useRef<HTMLCanvasElement>(null);
-  const animRef = useRef<number | null>(null);
 
-  // Word cycling
   useEffect(() => {
     const interval = setInterval(() => {
       setVisible(false);
@@ -24,160 +22,107 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Particle canvas
-  useEffect(() => {
-    const canvas = particleRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let W = (canvas.width = window.innerWidth);
-    let H = (canvas.height = window.innerHeight);
-
-    const onResize = () => {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', onResize);
-
-    const particles: {
-      x: number; y: number; r: number; speedX: number; speedY: number; opacity: number; color: string;
-    }[] = Array.from({ length: 60 }, () => ({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      r: Math.random() * 2 + 0.5,
-      speedX: (Math.random() - 0.5) * 0.4,
-      speedY: -Math.random() * 0.6 - 0.2,
-      opacity: Math.random() * 0.5 + 0.1,
-      color: Math.random() > 0.5 ? '#C7F464' : '#A8D5BA',
-    }));
-
-    const draw = () => {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach((p) => {
-        p.x += p.speedX;
-        p.y += p.speedY;
-        if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
-        if (p.x < -10) p.x = W + 10;
-        if (p.x > W + 10) p.x = -10;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.opacity;
-        ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-      animRef.current = requestAnimationFrame(draw);
-    };
-    draw();
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-      if (animRef.current) cancelAnimationFrame(animRef.current);
-    };
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#0a0a0a]">
-      {/* Particle canvas */}
-      <canvas ref={particleRef} className="absolute inset-0 pointer-events-none z-0" />
+    <section className="relative min-h-screen flex overflow-hidden bg-[#568203]">
 
-      {/* Radial glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-[#C7F464]/6 blur-[120px]" />
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[#A8D5BA]/5 blur-[100px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-[#C7F464]/5 blur-[80px]" />
-      </div>
+      {/* Left: content */}
+      <div className="relative z-10 flex flex-col justify-center w-full lg:w-[58%] px-10 sm:px-14 lg:px-20 xl:px-28 pt-32 pb-24">
+        {/* Glow */}
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#FFF8B9]/8 blur-[130px] pointer-events-none" />
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: 'linear-gradient(#C7F464 1px, transparent 1px), linear-gradient(90deg, #C7F464 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
-        }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-[#C7F464]/20 text-[#C7F464] text-sm font-medium mb-8 animate-bounce-gentle">
-          <span className="w-2 h-2 rounded-full bg-[#C7F464] animate-pulse" />
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[#FFF8B9]/25 bg-[#FFF8B9]/10 text-[#FFF8B9] text-xs font-semibold tracking-wide uppercase mb-12 w-fit">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#FFF8B9] animate-pulse" />
           Premium AI-Powered Fitness Platform
-          <ArrowRight size={14} />
         </div>
 
         {/* Headline */}
-        <h1 className="font-syne font-bold leading-[1.05] mb-6">
-          <span className="block text-[clamp(3rem,8vw,7rem)] text-white">
+        <h1 className="font-syne font-bold leading-[1.05] mb-10">
+          <span className="block text-[#FFF8B9]" style={{ fontSize: 'clamp(4rem, 7.5vw, 7.5rem)' }}>
             Become
           </span>
           <span
-            className={`block text-[clamp(3rem,8vw,7rem)] text-[#C7F464] transition-all duration-300 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
-            }`}
-            style={{ textShadow: '0 0 40px rgba(199,244,100,0.4)' }}
+            className="block text-[#F0E878] transition-all duration-300"
+            style={{
+              fontSize: 'clamp(4rem, 7.5vw, 7.5rem)',
+              opacity: visible ? 1 : 0,
+              transform: visible ? 'translateY(0)' : 'translateY(-14px)',
+              textShadow: '0 0 70px rgba(255,248,185,0.3)',
+            }}
           >
             {WORDS[wordIndex]}
           </span>
         </h1>
 
-        <p className="text-white/50 text-[clamp(1rem,2vw,1.25rem)] max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-[#FFF8B9]/60 leading-[1.8] mb-14 max-w-lg" style={{ fontSize: 'clamp(1.05rem, 1.5vw, 1.2rem)' }}>
           Train Hard. Eat Smart. Stay Consistent. Join 50,000+ athletes using
-          AI-powered coaching, science-backed workouts, and a community that
-          keeps you accountable.
+          AI-powered coaching, science-backed workouts, and a community built
+          for results.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-start gap-4 mb-20">
           <Link
             href="/workouts"
-            className="group flex items-center gap-3 px-8 py-4 rounded-full bg-[#C7F464] text-black font-bold text-base hover:bg-[#DEFF6E] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(199,244,100,0.5)] ripple"
+            className="group flex items-center gap-3 px-9 py-4 rounded-full bg-[#FFF8B9] text-[#568203] font-bold text-base hover:bg-[#F0E878] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_55px_rgba(255,248,185,0.35)]"
           >
             Start Training Free
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link
             href="/ai-coach"
-            className="group flex items-center gap-3 px-8 py-4 rounded-full glass border border-white/10 text-white font-medium text-base hover:border-[#C7F464]/40 transition-all duration-300"
+            className="flex items-center gap-3 px-9 py-4 rounded-full border border-[#FFF8B9]/25 text-[#FFF8B9]/80 font-medium text-base hover:border-[#FFF8B9]/50 hover:text-[#FFF8B9] transition-all duration-300"
           >
-            <Play size={16} className="fill-white" />
             Meet Your AI Coach
           </Link>
         </div>
 
-        {/* Stats row */}
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+        {/* Stats */}
+        <div className="flex flex-wrap gap-x-12 gap-y-8">
           {[
-            { value: '50K+', label: 'Athletes' },
-            { value: '500+', label: 'Workouts' },
+            { value: '50K+', label: 'Active Athletes' },
+            { value: '500+', label: 'Workout Programs' },
             { value: '98%', label: 'Success Rate' },
             { value: '4.9★', label: 'App Rating' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-syne font-bold text-3xl text-[#C7F464] mb-1">{stat.value}</div>
-              <div className="text-white/40 text-sm">{stat.label}</div>
+          ].map((stat, i) => (
+            <div key={stat.label} className="flex items-center gap-4">
+              {i > 0 && <div className="w-px h-9 bg-[#FFF8B9]/15" />}
+              <div>
+                <div className="font-syne font-bold text-2xl text-[#F0E878] mb-0.5">{stat.value}</div>
+                <div className="text-[#FFF8B9]/40 text-xs tracking-wide">{stat.label}</div>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Floating 3D-style dumbbell visuals */}
-      <div className="absolute left-8 top-1/3 opacity-20 animate-float-slow hidden lg:block">
-        <div className="text-8xl select-none">🏋️</div>
-      </div>
-      <div className="absolute right-12 top-1/4 opacity-15 animate-float hidden lg:block" style={{ animationDelay: '1s' }}>
-        <div className="text-6xl select-none">💪</div>
-      </div>
-      <div className="absolute right-8 bottom-1/3 opacity-15 animate-float-slow hidden lg:block" style={{ animationDelay: '2s' }}>
-        <div className="text-7xl select-none">⚡</div>
+      {/* Right: athlete image */}
+      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[48%]">
+        <Image
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&q=85&w=1400"
+          alt="Athlete training"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#568203] via-[#568203]/25 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#568203] to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#568203]/70 to-transparent" />
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce-gentle">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <ChevronDown size={16} />
+      {/* Grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04] z-[1]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,248,185,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,248,185,1) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
+
+      {/* Scroll hint */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 text-[#FFF8B9]/30 z-10 animate-bounce-gentle">
+        <span className="text-[10px] tracking-[0.2em] uppercase font-medium">Scroll</span>
+        <ChevronDown size={14} />
       </div>
     </section>
   );

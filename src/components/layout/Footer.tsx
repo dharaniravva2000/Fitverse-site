@@ -5,23 +5,22 @@ import { Zap, Dumbbell, AtSign, Hash, Radio } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0a0a0a] border-t border-white/5 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#C7F464]/5 blur-[100px] pointer-events-none" />
+    <footer className="relative bg-[#2d4501] border-t border-[#FFF8B9]/10 overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-[#FFF8B9]/5 blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto px-10 pt-20 pb-10 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-14 mb-16">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-[#C7F464] flex items-center justify-center">
-                <Zap size={18} fill="#111" color="#111" />
+            <Link href="/" className="flex items-center gap-2.5 mb-6">
+              <div className="w-9 h-9 rounded-xl bg-[#FFF8B9] flex items-center justify-center">
+                <Zap size={18} fill="#568203" color="#568203" />
               </div>
-              <span className="font-syne font-bold text-xl tracking-tight">
-                FIT<span className="text-[#C7F464]">VERSE</span>
+              <span className="font-syne font-bold text-xl tracking-tight text-[#FFF8B9]">
+                FIT<span className="text-[#F0E878]">VERSE</span>
               </span>
             </Link>
-            <p className="text-white/40 text-sm leading-relaxed mb-6">
+            <p className="text-[#FFF8B9]/45 text-sm leading-[1.8] mb-7">
               Train Hard. Eat Smart. Stay Consistent. Your premium fitness platform for a stronger, healthier you.
             </p>
             <div className="flex items-center gap-3">
@@ -33,7 +32,7 @@ export default function Footer() {
                 <button
                   key={label}
                   aria-label={label}
-                  className="w-9 h-9 rounded-full glass flex items-center justify-center text-white/50 hover:text-[#C7F464] hover:border-[#C7F464]/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-full border border-[#FFF8B9]/15 bg-[#FFF8B9]/5 flex items-center justify-center text-[#FFF8B9]/45 hover:text-[#FFF8B9] hover:border-[#FFF8B9]/30 transition-all duration-300"
                 >
                   <Icon size={16} />
                 </button>
@@ -72,15 +71,15 @@ export default function Footer() {
             },
           ].map((col) => (
             <div key={col.title}>
-              <h4 className="text-white font-semibold mb-4 text-sm tracking-wider uppercase">
+              <h4 className="text-[#FFF8B9] font-semibold mb-6 text-xs tracking-[0.2em] uppercase">
                 {col.title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-white/40 text-sm hover:text-[#C7F464] transition-colors duration-300"
+                      className="text-[#FFF8B9]/40 text-sm hover:text-[#FFF8B9] transition-colors duration-300"
                     >
                       {link.label}
                     </Link>
@@ -92,15 +91,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-white/30 text-sm">
+        <div className="pt-8 border-t border-[#FFF8B9]/8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2 text-[#FFF8B9]/28 text-sm">
             <Dumbbell size={14} />
             <span>© 2026 FITVERSE. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-6 text-white/30 text-sm">
-            <Link href="/" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
-            <Link href="/" className="hover:text-white/60 transition-colors">Terms of Service</Link>
-            <Link href="/" className="hover:text-white/60 transition-colors">Cookie Policy</Link>
+          <div className="flex items-center gap-6 text-[#FFF8B9]/28 text-sm">
+            <Link href="/" className="hover:text-[#FFF8B9]/60 transition-colors">Privacy Policy</Link>
+            <Link href="/" className="hover:text-[#FFF8B9]/60 transition-colors">Terms of Service</Link>
+            <Link href="/" className="hover:text-[#FFF8B9]/60 transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

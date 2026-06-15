@@ -35,23 +35,23 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'py-3 nav-blur bg-black/70 border-b border-white/5'
-          : 'py-6 bg-transparent'
+          ? 'py-3 nav-blur bg-[#3d5e02]/95 border-b border-[#FFF8B9]/10'
+          : 'py-5 bg-[#568203]/80'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-10 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-[#C7F464] flex items-center justify-center group-hover:scale-110 transition-transform">
-            <Zap size={18} fill="#111" color="#111" />
+        <Link href="/" className="flex items-center gap-2.5 group">
+          <div className="w-9 h-9 rounded-xl bg-[#FFF8B9] flex items-center justify-center group-hover:scale-110 transition-transform">
+            <Zap size={18} fill="#568203" color="#568203" />
           </div>
-          <span className="font-syne font-800 text-xl tracking-tight">
-            FIT<span className="text-[#C7F464]">VERSE</span>
+          <span className="font-syne font-800 text-xl tracking-tight text-[#FFF8B9]">
+            FIT<span className="text-[#F0E878]">VERSE</span>
           </span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((link, i) => {
             const isActive = pathname === link.href;
             return (
@@ -60,21 +60,15 @@ export default function Navbar() {
                 href={link.href}
                 onMouseEnter={() => setActiveIndex(i)}
                 onMouseLeave={() => setActiveIndex(null)}
-                className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-1.5 ${
+                className={`relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                   isActive
-                    ? 'text-[#C7F464]'
-                    : 'text-white/70 hover:text-white'
+                    ? 'text-[#FFF8B9] bg-[#FFF8B9]/15'
+                    : 'text-[#FFF8B9]/70 hover:text-[#FFF8B9] hover:bg-[#FFF8B9]/10'
                 }`}
               >
-                {isActive && (
-                  <span className="absolute inset-0 rounded-lg bg-white/5" />
-                )}
-                {activeIndex === i && !isActive && (
-                  <span className="absolute inset-0 rounded-lg bg-white/5" />
-                )}
                 {link.label}
                 {link.badge && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#C7F464] text-black">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#FFF8B9] text-[#568203]">
                     {link.badge}
                   </span>
                 )}
@@ -87,7 +81,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <Link
             href="/ai-coach"
-            className="px-5 py-2 rounded-full bg-[#C7F464] text-black text-sm font-semibold hover:bg-[#DEFF6E] transition-all duration-300 hover:scale-105 ripple"
+            className="px-6 py-2.5 rounded-full bg-[#FFF8B9] text-[#568203] text-sm font-bold hover:bg-[#F0E878] transition-all duration-300 hover:scale-105"
           >
             Start Free →
           </Link>
@@ -96,7 +90,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg glass text-white"
+          className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl border border-[#FFF8B9]/20 text-[#FFF8B9]"
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -108,7 +102,7 @@ export default function Navbar() {
           menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="px-6 py-4 bg-black/90 border-t border-white/5 flex flex-col gap-2">
+        <div className="px-6 py-4 bg-[#3d5e02] border-t border-[#FFF8B9]/10 flex flex-col gap-2">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -117,13 +111,13 @@ export default function Navbar() {
                 href={link.href}
                 className={`px-4 py-3 rounded-xl text-sm font-medium flex items-center justify-between ${
                   isActive
-                    ? 'bg-[#C7F464]/10 text-[#C7F464]'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
+                    ? 'bg-[#FFF8B9]/15 text-[#FFF8B9]'
+                    : 'text-[#FFF8B9]/70 hover:text-[#FFF8B9] hover:bg-[#FFF8B9]/8'
                 }`}
               >
                 {link.label}
                 {link.badge && (
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#C7F464] text-black">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#FFF8B9] text-[#568203]">
                     {link.badge}
                   </span>
                 )}
@@ -132,7 +126,7 @@ export default function Navbar() {
           })}
           <Link
             href="/ai-coach"
-            className="mt-2 px-5 py-3 rounded-full bg-[#C7F464] text-black text-sm font-semibold text-center"
+            className="mt-2 px-5 py-3 rounded-full bg-[#FFF8B9] text-[#568203] text-sm font-bold text-center"
           >
             Start Free →
           </Link>
