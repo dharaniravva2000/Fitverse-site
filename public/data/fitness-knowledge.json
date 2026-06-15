@@ -1,0 +1,295 @@
+{
+  "personality": {
+    "name": "FITBOT",
+    "title": "Your AI Fitness Coach",
+    "avatar": "💪",
+    "traits": ["motivating", "playful", "slightly sarcastic", "knowledgeable", "friendly"]
+  },
+  "greetings": [
+    "Hey there, champion! Ready to crush today's goals? 🔥",
+    "Welcome back! Your future self is watching your every choice right now.",
+    "Look who showed up. Half the battle is just getting here. Let's GO.",
+    "The gym doesn't care about your mood. Neither do your gains. Let's work!",
+    "Another day, another chance to become absolutely unstoppable."
+  ],
+  "motivational_responses": {
+    "lazy": [
+      "That's exactly why today matters. Future-you is already judging your excuses.",
+      "Laziness is just fear wearing sweatpants. Change into gym clothes instead.",
+      "The couch will always be there. Your youth won't. Move it!",
+      "Your muscles literally cannot grow if you're horizontal on the couch. Science said so.",
+      "Every champion you admire had days they didn't feel like it. They showed up anyway."
+    ],
+    "tired": [
+      "Tired or lazy? Big difference. Tired still means we work — just smarter today.",
+      "Rest is earned, not given on day 1. Keep moving, then earn your sleep tonight.",
+      "Your body is 40% more capable than your brain admits when you're tired. Trust the process.",
+      "A 20-minute workout when tired does more than zero. Start with 5 minutes."
+    ],
+    "motivated": [
+      "YES! Channel that energy RIGHT NOW before it disappears. Go lift something heavy.",
+      "This energy? BOTTLE IT. Use it today and remember how it feels when things get hard.",
+      "That's the spirit! Now let's build a plan worthy of that motivation."
+    ],
+    "skip": [
+      "Missing one workout is fine. Missing two is a pattern. Missing three is a lifestyle choice.",
+      "Skipped yesterday? Today is your reset button. Use it.",
+      "Your muscles don't know what day it is. But they do know when you stopped showing up."
+    ]
+  },
+  "workouts": {
+    "arms": {
+      "description": "Targeted arm training for bigger biceps and triceps",
+      "exercises": [
+        {"name": "Barbell Curl", "sets": 4, "reps": "8-12", "muscle": "Biceps", "tip": "Squeeze at the top, control the negative"},
+        {"name": "Hammer Curl", "sets": 3, "reps": "10-12", "muscle": "Brachialis", "tip": "Keep elbows pinned to your sides"},
+        {"name": "Tricep Pushdown", "sets": 4, "reps": "12-15", "muscle": "Triceps", "tip": "Lock elbows down, full extension"},
+        {"name": "Skull Crushers", "sets": 3, "reps": "8-10", "muscle": "Triceps", "tip": "Lower to forehead slowly, explode up"},
+        {"name": "Concentration Curl", "sets": 3, "reps": "12", "muscle": "Biceps Peak", "tip": "Full range of motion, peak squeeze"},
+        {"name": "Overhead Tricep Extension", "sets": 3, "reps": "10-12", "muscle": "Triceps Long Head", "tip": "Elbows close to head"}
+      ],
+      "message": "Great. Let's make your sleeves regret existing. Here's your arm destruction plan:"
+    },
+    "chest": {
+      "description": "Chest training for a powerful, well-defined upper body",
+      "exercises": [
+        {"name": "Bench Press", "sets": 4, "reps": "6-8", "muscle": "Chest", "tip": "Control the descent, explosive press"},
+        {"name": "Incline Dumbbell Press", "sets": 3, "reps": "10-12", "muscle": "Upper Chest", "tip": "Feel the upper chest stretch"},
+        {"name": "Cable Fly", "sets": 3, "reps": "12-15", "muscle": "Chest", "tip": "Squeeze hard at center"},
+        {"name": "Dips", "sets": 3, "reps": "To failure", "muscle": "Lower Chest", "tip": "Lean forward for chest emphasis"},
+        {"name": "Push-Ups", "sets": 3, "reps": "20+", "muscle": "Chest", "tip": "Hands wider than shoulders"},
+        {"name": "Pec Deck Machine", "sets": 3, "reps": "15", "muscle": "Chest", "tip": "Don't let weight crash at back"}
+      ],
+      "message": "Building a chest worth showing off. Here's your chest annihilation protocol:"
+    },
+    "legs": {
+      "description": "Lower body training — don't skip it!",
+      "exercises": [
+        {"name": "Barbell Squat", "sets": 4, "reps": "6-8", "muscle": "Quads/Glutes", "tip": "Chest up, knees track toes"},
+        {"name": "Romanian Deadlift", "sets": 3, "reps": "10-12", "muscle": "Hamstrings", "tip": "Push hips back, not down"},
+        {"name": "Leg Press", "sets": 4, "reps": "12-15", "muscle": "Quads", "tip": "Don't lock knees at top"},
+        {"name": "Walking Lunges", "sets": 3, "reps": "12 each leg", "muscle": "Quads/Glutes", "tip": "Big step, knee above ankle"},
+        {"name": "Leg Curl", "sets": 3, "reps": "12-15", "muscle": "Hamstrings", "tip": "Squeeze at full contraction"},
+        {"name": "Calf Raises", "sets": 4, "reps": "20-25", "muscle": "Calves", "tip": "Full range, pause at top"}
+      ],
+      "message": "Oh, so you remembered legs exist! Let's get those chicken legs sorted:"
+    },
+    "back": {
+      "description": "Back training for width, thickness, and posture",
+      "exercises": [
+        {"name": "Deadlift", "sets": 4, "reps": "5", "muscle": "Full Back", "tip": "Neutral spine, drive through heels"},
+        {"name": "Pull-Ups", "sets": 4, "reps": "To failure", "muscle": "Lats", "tip": "Full hang to chest at bar"},
+        {"name": "Barbell Row", "sets": 4, "reps": "8-10", "muscle": "Lats/Rhomboids", "tip": "Pull to lower chest"},
+        {"name": "Lat Pulldown", "sets": 3, "reps": "12-15", "muscle": "Lats", "tip": "Elbows to pockets, lean slightly back"},
+        {"name": "Seated Cable Row", "sets": 3, "reps": "12", "muscle": "Mid Back", "tip": "Chest up, squeeze shoulder blades"},
+        {"name": "Face Pulls", "sets": 3, "reps": "15-20", "muscle": "Rear Delts", "tip": "Pull to forehead, elbows high"}
+      ],
+      "message": "Back day is the foundation of every great physique. Let's build yours:"
+    },
+    "shoulders": {
+      "description": "Shoulder training for boulder shoulders",
+      "exercises": [
+        {"name": "Overhead Press", "sets": 4, "reps": "6-8", "muscle": "Front/Mid Delts", "tip": "Bar travels straight up"},
+        {"name": "Lateral Raises", "sets": 4, "reps": "12-15", "muscle": "Side Delts", "tip": "Slight elbow bend, controlled"},
+        {"name": "Front Raises", "sets": 3, "reps": "12", "muscle": "Front Delts", "tip": "Don't swing the weight"},
+        {"name": "Rear Delt Fly", "sets": 3, "reps": "15", "muscle": "Rear Delts", "tip": "Squeeze rear delts, not traps"},
+        {"name": "Arnold Press", "sets": 3, "reps": "10-12", "muscle": "Full Delts", "tip": "Rotate through full range"}
+      ],
+      "message": "Shoulders make the silhouette. Let's build some boulders:"
+    },
+    "abs": {
+      "description": "Core training for a strong, defined midsection",
+      "exercises": [
+        {"name": "Plank", "sets": 3, "reps": "60 seconds", "muscle": "Core", "tip": "Squeeze glutes, don't sag"},
+        {"name": "Cable Crunch", "sets": 3, "reps": "15-20", "muscle": "Upper Abs", "tip": "Round spine, feel the abs"},
+        {"name": "Leg Raises", "sets": 3, "reps": "15-20", "muscle": "Lower Abs", "tip": "Control the descent"},
+        {"name": "Russian Twists", "sets": 3, "reps": "20 each side", "muscle": "Obliques", "tip": "Lean back 45 degrees"},
+        {"name": "Ab Wheel Rollout", "sets": 3, "reps": "10-12", "muscle": "Full Core", "tip": "Hips don't drop, control back"},
+        {"name": "Mountain Climbers", "sets": 3, "reps": "30 seconds", "muscle": "Core/Cardio", "tip": "Fast and controlled"}
+      ],
+      "message": "Abs are built in the kitchen AND the gym. Let's handle the gym part:"
+    },
+    "cardio": {
+      "description": "Cardio training to burn fat and build endurance",
+      "exercises": [
+        {"name": "HIIT Sprints", "sets": 8, "reps": "30 sec on / 30 sec off", "muscle": "Full Body", "tip": "Max effort on sprints"},
+        {"name": "Jump Rope", "sets": 5, "reps": "2 minutes", "muscle": "Full Body", "tip": "Stay light on your feet"},
+        {"name": "Rowing Machine", "sets": 3, "reps": "500m", "muscle": "Full Body", "tip": "Legs then core then arms"},
+        {"name": "Stair Climber", "sets": 1, "reps": "20 minutes", "muscle": "Legs/Glutes", "tip": "Steady pace, don't hold rails"},
+        {"name": "Cycling", "sets": 1, "reps": "30 minutes", "muscle": "Legs/Cardio", "tip": "Maintain 80-100 RPM"}
+      ],
+      "message": "Cardio — the exercise everyone loves to hate. Let's make it count:"
+    },
+    "full_body": {
+      "description": "Full body workout for maximum efficiency",
+      "exercises": [
+        {"name": "Barbell Squat", "sets": 3, "reps": "8-10", "muscle": "Legs", "tip": "Full depth, controlled"},
+        {"name": "Bench Press", "sets": 3, "reps": "8-10", "muscle": "Chest", "tip": "Arch back slightly"},
+        {"name": "Pull-Ups", "sets": 3, "reps": "To failure", "muscle": "Back", "tip": "Dead hang to chest"},
+        {"name": "Overhead Press", "sets": 3, "reps": "8-10", "muscle": "Shoulders", "tip": "Core tight throughout"},
+        {"name": "Romanian Deadlift", "sets": 3, "reps": "10-12", "muscle": "Posterior", "tip": "Feel the hamstring stretch"},
+        {"name": "Plank", "sets": 3, "reps": "60 seconds", "muscle": "Core", "tip": "Every second counts"}
+      ],
+      "message": "Efficient, brutal, effective. Full body day hits different:"
+    },
+    "beginner": {
+      "description": "Perfect starting routine for beginners",
+      "exercises": [
+        {"name": "Bodyweight Squat", "sets": 3, "reps": "15", "muscle": "Legs", "tip": "Learn the movement first"},
+        {"name": "Push-Ups", "sets": 3, "reps": "10-15", "muscle": "Chest/Triceps", "tip": "Knees down is totally fine"},
+        {"name": "Assisted Pull-Ups", "sets": 3, "reps": "8-10", "muscle": "Back", "tip": "Use a resistance band"},
+        {"name": "Dumbbell Row", "sets": 3, "reps": "10-12", "muscle": "Back", "tip": "Support yourself on a bench"},
+        {"name": "Plank Hold", "sets": 3, "reps": "30 seconds", "muscle": "Core", "tip": "Build up to 60 seconds"},
+        {"name": "Walking", "sets": 1, "reps": "20-30 minutes", "muscle": "Cardio", "tip": "3.5-4 mph, steady pace"}
+      ],
+      "message": "Everyone starts somewhere. Today is YOUR day one. Let's keep it simple but effective:"
+    }
+  },
+  "nutrition": {
+    "protein_sources": [
+      {"food": "Chicken Breast", "protein_per_100g": 31, "calories": 165, "tip": "The GOAT of muscle building foods"},
+      {"food": "Salmon", "protein_per_100g": 25, "calories": 208, "tip": "Also packed with omega-3s — brain and joint food"},
+      {"food": "Greek Yogurt", "protein_per_100g": 10, "calories": 59, "tip": "Perfect post-workout or breakfast option"},
+      {"food": "Eggs", "protein_per_100g": 13, "calories": 155, "tip": "The most complete protein source on earth"},
+      {"food": "Tuna", "protein_per_100g": 30, "calories": 109, "tip": "Cheap, quick, high protein — budget gains"},
+      {"food": "Beef (Lean)", "protein_per_100g": 26, "calories": 215, "tip": "Best iron source among proteins"},
+      {"food": "Cottage Cheese", "protein_per_100g": 11, "calories": 98, "tip": "Casein protein — perfect before bed"},
+      {"food": "Lentils", "protein_per_100g": 9, "calories": 116, "tip": "Best plant protein with great fiber"},
+      {"food": "Tofu", "protein_per_100g": 8, "calories": 76, "tip": "Versatile vegan protein — don't sleep on it"},
+      {"food": "Whey Protein", "protein_per_100g": 80, "calories": 400, "tip": "Fast-absorbing, perfect post-workout"}
+    ],
+    "meal_plans": {
+      "muscle_gain": {
+        "calories": "2800-3200",
+        "protein": "180-220g",
+        "carbs": "350-400g",
+        "fats": "80-100g",
+        "meals": [
+          {"time": "7:00 AM", "meal": "Oats + Eggs + Banana", "calories": 550, "protein": 35},
+          {"time": "10:00 AM", "meal": "Greek Yogurt + Berries + Almonds", "calories": 350, "protein": 25},
+          {"time": "1:00 PM", "meal": "Chicken Breast + Rice + Broccoli", "calories": 650, "protein": 55},
+          {"time": "4:00 PM", "meal": "Whey Shake + Apple", "calories": 300, "protein": 30},
+          {"time": "7:00 PM", "meal": "Salmon + Sweet Potato + Salad", "calories": 600, "protein": 45},
+          {"time": "9:30 PM", "meal": "Cottage Cheese + Casein Protein", "calories": 250, "protein": 30}
+        ]
+      },
+      "fat_loss": {
+        "calories": "1600-1900",
+        "protein": "160-200g",
+        "carbs": "150-200g",
+        "fats": "50-70g",
+        "meals": [
+          {"time": "7:00 AM", "meal": "Eggs + Spinach Omelette", "calories": 350, "protein": 30},
+          {"time": "10:00 AM", "meal": "Protein Shake + Apple", "calories": 200, "protein": 25},
+          {"time": "1:00 PM", "meal": "Tuna Salad + Whole Grain Bread", "calories": 400, "protein": 40},
+          {"time": "4:00 PM", "meal": "Greek Yogurt + Cucumber", "calories": 150, "protein": 15},
+          {"time": "7:00 PM", "meal": "Grilled Chicken + Vegetables", "calories": 500, "protein": 50}
+        ]
+      },
+      "vegan": {
+        "calories": "2000-2400",
+        "protein": "140-170g",
+        "carbs": "250-300g",
+        "fats": "65-80g",
+        "meals": [
+          {"time": "7:00 AM", "meal": "Tofu Scramble + Toast + Fruit", "calories": 450, "protein": 30},
+          {"time": "10:00 AM", "meal": "Protein Smoothie (Pea Protein + Berries)", "calories": 300, "protein": 25},
+          {"time": "1:00 PM", "meal": "Lentil Bowl + Brown Rice + Veggies", "calories": 550, "protein": 28},
+          {"time": "4:00 PM", "meal": "Edamame + Nuts", "calories": 250, "protein": 18},
+          {"time": "7:00 PM", "meal": "Tempeh Stir Fry + Quinoa", "calories": 500, "protein": 35}
+        ]
+      }
+    },
+    "hydration": {
+      "formula": "Body weight (kg) × 0.033 = Daily water intake in liters",
+      "tips": [
+        "Start every morning with 500ml of water before anything else",
+        "During training, sip 150-250ml every 15-20 minutes",
+        "Urine color is your best hydration monitor — aim for pale yellow",
+        "Add electrolytes when training over 60 minutes",
+        "Drink 500ml extra on rest days too — your body still needs it"
+      ]
+    },
+    "supplements": [
+      {"name": "Creatine Monohydrate", "dose": "3-5g daily", "benefit": "Proven to increase strength and power output", "rating": 5},
+      {"name": "Whey Protein", "dose": "1-2 scoops post-workout", "benefit": "Fast protein for muscle recovery", "rating": 5},
+      {"name": "Vitamin D3", "dose": "2000-4000 IU daily", "benefit": "Hormone health, immunity, mood", "rating": 5},
+      {"name": "Omega-3 Fish Oil", "dose": "2-4g EPA/DHA daily", "benefit": "Reduces inflammation, joint health", "rating": 4},
+      {"name": "Magnesium Glycinate", "dose": "300-400mg before bed", "benefit": "Sleep quality and recovery", "rating": 4},
+      {"name": "Pre-Workout", "dose": "1 serving 20min before", "benefit": "Energy and focus (but don't rely on it)", "rating": 3}
+    ]
+  },
+  "challenges": [
+    {
+      "id": "30day-transform",
+      "name": "30-Day Transformation",
+      "description": "Complete overhaul in 30 days",
+      "participants": 12847,
+      "difficulty": "Intermediate",
+      "prize": "Featured on FITVERSE"
+    },
+    {
+      "id": "100-pushups",
+      "name": "100 Push-Ups Challenge",
+      "description": "Work up to 100 consecutive push-ups",
+      "participants": 8934,
+      "difficulty": "Beginner",
+      "prize": "Bronze Badge"
+    },
+    {
+      "id": "10k-steps",
+      "name": "10K Steps Daily",
+      "description": "Hit 10,000 steps every day for 30 days",
+      "participants": 15620,
+      "difficulty": "Beginner",
+      "prize": "Active Life Badge"
+    }
+  ],
+  "faqs": {
+    "how_often_train": {
+      "question": "How many times should I work out per week?",
+      "answer": "For beginners: 3x per week full body. Intermediate: 4x with push/pull splits. Advanced: 5-6x with specific muscle group splits. Rest is when you actually GROW — don't skip it."
+    },
+    "how_long_results": {
+      "question": "How long until I see results?",
+      "answer": "You'll FEEL results in 2 weeks. See results in 4-6 weeks. Others will notice in 8-12 weeks. Stay consistent — results are guaranteed if you show up."
+    },
+    "cardio_or_weights": {
+      "question": "Should I do cardio or weights first?",
+      "answer": "If your goal is muscle gain: weights first, cardio second (or separate sessions). If fat loss: either works, but weights builds the metabolic engine that keeps burning after the gym."
+    },
+    "protein_timing": {
+      "question": "When should I eat protein?",
+      "answer": "The 'anabolic window' isn't as tight as bro science claims. Spread protein across 4-5 meals throughout the day. Post-workout protein within 2 hours is still smart though."
+    },
+    "plateau": {
+      "question": "I've hit a plateau. What do I do?",
+      "answer": "1) Add progressive overload — more weight or reps. 2) Change rep ranges. 3) Check sleep and nutrition. 4) Deload week. 5) New exercises. Plateau = your body adapted. Shock it."
+    },
+    "sore_muscles": {
+      "question": "My muscles are really sore. Should I still train?",
+      "answer": "Light soreness? Train through it — blood flow helps recovery. Severe soreness or pain? Rest or do active recovery (walks, stretching). Pain is feedback. Listen to it."
+    },
+    "membership": {
+      "question": "What does FITVERSE membership include?",
+      "answer": "Your FITVERSE membership unlocks: unlimited AI coaching, access to 500+ workout programs, custom meal plans, community challenges, progress tracking, and live expert sessions. Plans start at $9.99/month."
+    }
+  },
+  "quotes": [
+    "The body achieves what the mind believes.",
+    "No pain, no gain — but also no brain, no gain.",
+    "You don't have to be extreme. Just consistent.",
+    "The only bad workout is the one that didn't happen.",
+    "Your body hears everything your mind says. Say the right things.",
+    "Sore today. Strong tomorrow.",
+    "Fall seven times, get up eight. Then do eight more reps.",
+    "Motivation gets you started. Discipline keeps you going.",
+    "Be stronger than your strongest excuse.",
+    "The mirror doesn't lie — but it takes time to tell the truth.",
+    "Sweat is just fat crying.",
+    "Train insane or remain the same.",
+    "Fitness is not about being better than someone else — it's about being better than you used to be.",
+    "Results happen over time, not overnight. Work hard, stay consistent, and be patient.",
+    "Your only competition is the person you were yesterday."
+  ]
+}
